@@ -1,11 +1,11 @@
-import anthropic
+import google.generativeai as genai
 import json
 import re
-
+import os
 
 def parse_job_description(jd_text: str) -> dict:
-    """Parse a raw job description into structured fields using Claude."""
-    client = anthropic.Anthropic()
+    genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+    model = genai.GenerativeModel("gemini-1.5-flash")
 
     prompt = f"""You are an expert HR analyst. Parse the following job description and extract structured information.
 
@@ -29,18 +29,10 @@ Return a JSON object with EXACTLY these fields:
     "team_size": "string or null"
 }}
 
-If experience is not specified, use 0 for min and 99 for max.
 Return ONLY valid JSON, no markdown fences, no explanation."""
 
-    message = client.messages.create(
-        model="claude-3-5-haiku-20241022",
-        max_tokens=1000,
-        messages=[{"role": "user", "content": prompt}],
-    )
-
-    raw = message.content[0].text.strip()
-    # Strip markdown fences if present
+    response = model.generate_content(prompt)
+    raw = response.text.strip()
     raw = re.sub(r"^```(?:json)?\s*", "", raw)
     raw = re.sub(r"\s*```$", "", raw)
-
     return json.loads(raw.strip())
