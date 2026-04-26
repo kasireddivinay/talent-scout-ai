@@ -253,7 +253,7 @@ def render_skills(skills: list, pill_class: str = "skill-pill"):
     pills = " ".join(f'<span class="{pill_class}">{s}</span>' for s in skills)
     st.markdown(f'<div style="margin:0.3rem 0;">{pills}</div>', unsafe_allow_html=True)
 
-def check_api_key():
+def #check_api_key():
     key = os.environ.get("ANTHROPIC_API_KEY", "")
     if not key:
         st.error("⚠️ **ANTHROPIC_API_KEY not set.** Add it to your environment or `.env` file.")
@@ -418,7 +418,7 @@ if step == 0:
         if not jd_text.strip() or len(jd_text.strip()) < 50:
             st.warning("Please paste a full job description (at least 50 characters).")
         else:
-            check_api_key()
+            #check_api_key()
             st.session_state["jd_text"] = jd_text
             # ── Parse JD ──────────────────────────────────────────────────────
             with st.spinner("🧠 Parsing job description..."):
