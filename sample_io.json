@@ -1,0 +1,113 @@
+{
+  "sample_inputs": [
+    {
+      "name": "Senior Backend Engineer (FinTech)",
+      "job_description": "We are hiring a Senior Backend Engineer at FinFlow (FinTech startup, Series B).\n\nRole: Senior Backend Engineer\nLocation: Bangalore (Hybrid)\nExperience: 5-8 years\n\nRequirements:\n- Strong proficiency in Python (FastAPI or Django)\n- Experience with PostgreSQL, Redis, and Kafka\n- Kubernetes and Docker in production\n- Microservices architecture design\n- AWS (EC2, RDS, Lambda, S3)\n\nNice to have:\n- FinTech / payments domain experience\n- Compliance experience (PCI-DSS)\n\nCompensation: ₹35–50 LPA\nTeam size: 8 engineers reporting to CTO"
+    },
+    {
+      "name": "ML Engineer – LLMs",
+      "job_description": "Stealth AI startup building enterprise LLM applications seeks an ML Engineer.\n\nLocation: Remote\nExperience: 3-6 years\n\nMust have:\n- PyTorch, Transformers (Hugging Face)\n- LLM fine-tuning (LoRA, QLoRA, RLHF)\n- RAG pipeline development\n- Vector databases (Pinecone, Weaviate)\n- LangChain / LlamaIndex\n\nCompensation: ₹30–50 LPA + equity"
+    }
+  ],
+  "sample_output": {
+    "parsed_jd": {
+      "role_title": "Senior Backend Engineer",
+      "seniority": "Senior",
+      "required_skills": ["Python", "FastAPI", "Django", "PostgreSQL", "Redis", "Kafka", "Kubernetes", "Docker", "AWS"],
+      "nice_to_have_skills": ["FinTech domain experience", "PCI-DSS compliance"],
+      "experience_min": 5,
+      "experience_max": 8,
+      "location": "Bangalore, India",
+      "work_mode": "Hybrid",
+      "domain": "FinTech",
+      "key_responsibilities": [
+        "Design and build scalable payment processing APIs",
+        "Lead technical design reviews",
+        "Mentor junior engineers",
+        "Collaborate with product and ML teams"
+      ],
+      "salary_range": "₹35–50 LPA",
+      "team_size": "8 engineers"
+    },
+    "ranked_shortlist": [
+      {
+        "rank": 1,
+        "name": "Arjun Sharma",
+        "title": "Senior Backend Engineer",
+        "company": "Flipkart",
+        "match_score": 91,
+        "interest_score": 82,
+        "composite_score": 87.4,
+        "grade": "🏆 Top Pick",
+        "matched_skills": ["Python", "FastAPI", "PostgreSQL", "Redis", "Docker", "Kubernetes", "AWS", "Microservices", "Kafka"],
+        "missing_critical_skills": [],
+        "match_reasoning": "Arjun is an exceptional match — 9 of 9 required skills hit directly. His Flipkart microservices experience at 10M+ user scale maps perfectly. Hybrid Bangalore availability is ideal.",
+        "interest_level": "High",
+        "interest_reasoning": "Responded enthusiastically and asked targeted questions about the team and product. Salary range is aligned. Notice period is workable.",
+        "next_action": "Schedule 30-min intro call",
+        "availability": "2 months notice",
+        "salary_expectation": "₹35–45 LPA"
+      },
+      {
+        "rank": 2,
+        "name": "Vikram Singh",
+        "title": "DevOps / Cloud Engineer",
+        "company": "ThoughtWorks",
+        "match_score": 74,
+        "interest_score": 88,
+        "composite_score": 79.6,
+        "grade": "⭐ Strong",
+        "matched_skills": ["AWS", "Kubernetes", "Docker", "Python"],
+        "missing_critical_skills": ["FastAPI", "PostgreSQL", "Kafka"],
+        "match_reasoning": "Strong on infrastructure stack but lacks direct backend API development experience. Immediate availability and high interest are significant advantages.",
+        "interest_level": "Very High",
+        "interest_reasoning": "Actively looking and responded immediately with strong interest. Currently unemployed so highly motivated.",
+        "next_action": "Send full JD and set up technical screen",
+        "availability": "Immediately available",
+        "salary_expectation": "₹28–38 LPA"
+      },
+      {
+        "rank": 3,
+        "name": "Meera Iyer",
+        "title": "Senior Data Engineer",
+        "company": "Swiggy",
+        "match_score": 68,
+        "interest_score": 72,
+        "composite_score": 69.6,
+        "grade": "✅ Good Fit",
+        "matched_skills": ["Python", "Kafka", "AWS", "Docker", "PostgreSQL"],
+        "missing_critical_skills": ["FastAPI", "Kubernetes"],
+        "match_reasoning": "Strong data engineering background with Kafka and Python expertise. Primarily a data engineer, not backend API developer — would need upskilling on FastAPI.",
+        "interest_level": "Moderate",
+        "interest_reasoning": "Interested but cautious — asked whether the role is purely backend or has data engineering components.",
+        "next_action": "Clarify role scope before proceeding",
+        "availability": "2 months notice",
+        "salary_expectation": "₹32–42 LPA"
+      }
+    ],
+    "outreach_sample": {
+      "candidate": "Arjun Sharma",
+      "conversation": [
+        {
+          "sender": "Recruiter",
+          "message": "Hi Arjun! Impressive work at Flipkart — leading the microservices migration serving 10M+ users is exactly the kind of scale we're looking for. We have a Senior Backend Engineering role at a Series B FinTech (payments domain) — Python/FastAPI, Kafka, K8s stack. Would love to share more. Open to a quick 15-min chat this week?"
+        },
+        {
+          "sender": "Arjun Sharma",
+          "message": "Hi! Thanks for the personalized message — really appreciate that you looked at my actual work. The FinTech + microservices angle is interesting. I'm at Flipkart but open to hearing more. What's the company and what's the engineering challenge specifically?"
+        },
+        {
+          "sender": "Recruiter",
+          "message": "The company is FinFlow — processing ₹500Cr+ in monthly transactions for SMBs. The core challenge is rebuilding their payment processing engine to handle 10x transaction volume. It's a senior IC role with tech lead trajectory. Team of 8, reporting directly to CTO. Comp: ₹35–50 LPA + ESOPs."
+        },
+        {
+          "sender": "Arjun Sharma",
+          "message": "That sounds genuinely interesting — the scale challenge and FinTech domain are both things I want more exposure to. Salary band works. I'm on a 2-month notice but open to discussing. Could you share the full JD? Happy to set up a call Thursday or Friday if that works."
+        }
+      ],
+      "interest_score": 82,
+      "interest_level": "High",
+      "next_action": "Schedule 30-min intro call — candidate is warm and aligned on salary"
+    }
+  }
+}
