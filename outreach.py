@@ -62,7 +62,7 @@ interest_level must be one of: Very High | High | Moderate | Low | Not Intereste
 interest_score: 0-100 (Very High=85-100, High=70-84, Moderate=50-69, Low=25-49, Not Interested=0-24)"""
 
     message = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model="claude-3-5-haiku-20241022",
         max_tokens=1500,
         messages=[{"role": "user", "content": prompt}],
     )

@@ -33,7 +33,7 @@ If experience is not specified, use 0 for min and 99 for max.
 Return ONLY valid JSON, no markdown fences, no explanation."""
 
     message = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model="claude-3-5-haiku-20241022",
         max_tokens=1000,
         messages=[{"role": "user", "content": prompt}],
     )
