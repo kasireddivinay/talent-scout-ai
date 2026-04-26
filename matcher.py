@@ -1,7 +1,7 @@
 import anthropic
 import json
 import re
-from data.candidates import CANDIDATE_POOL
+from candidates import CANDIDATE_POOL
 
 
 def discover_and_match_candidates(parsed_jd: dict, top_n: int = 8) -> list:

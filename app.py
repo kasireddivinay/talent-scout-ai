@@ -422,13 +422,13 @@ if step == 0:
             st.session_state["jd_text"] = jd_text
             # ── Parse JD ──────────────────────────────────────────────────────
             with st.spinner("🧠 Parsing job description..."):
-                from agents.jd_parser import parse_job_description
+                from jd_parser import parse_job_description
                 parsed = parse_job_description(jd_text)
                 st.session_state["parsed_jd"] = parsed
 
             # ── Match Candidates ───────────────────────────────────────────────
             with st.spinner(f"🔍 Discovering and scoring candidates from pool of 15..."):
-                from agents.matcher import discover_and_match_candidates
+                from matcher import discover_and_match_candidates
                 matched = discover_and_match_candidates(parsed, top_n=top_n)
                 st.session_state["matched_candidates"] = matched
 
@@ -436,7 +436,7 @@ if step == 0:
             outreach_results = {}
             engage_candidates = matched[:outreach_n]
             progress = st.progress(0, text="💬 Simulating outreach conversations...")
-            from agents.outreach import simulate_outreach
+            from outreach import simulate_outreach
             for i, cand in enumerate(engage_candidates):
                 progress.progress((i + 1) / outreach_n, text=f"💬 Engaging {cand['name']}...")
                 result = simulate_outreach(cand, parsed)
@@ -445,9 +445,9 @@ if step == 0:
             st.session_state["outreach_results"] = outreach_results
 
             # ── Final Scoring ─────────────────────────────────────────────────
-            from agents.scorer import compute_final_scores
+            from scorer import compute_final_scores
             # Override weights with sidebar settings
-            import agents.scorer as scorer_module
+            import scorer as scorer_module
             def weighted_score(candidates, outreach):
                 final = []
                 for candidate in candidates:
