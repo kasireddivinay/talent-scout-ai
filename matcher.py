@@ -60,7 +60,7 @@ match_grade must be one of: Excellent (85-100) | Strong (70-84) | Good (55-69) |
 Return ONLY valid JSON array, no markdown, no extra text."""
 
     message = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-haiku-4-5-20251001",
         max_tokens=4000,
         messages=[{"role": "user", "content": prompt}],
     )
