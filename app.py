@@ -116,13 +116,10 @@ def grade(s):
     return "❌ Weak"
 
 def call_gemini(prompt):
-    import requests
-    key = os.environ["GEMINI_API_KEY"]
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={key}"
-    body = {"contents":[{"parts":[{"text":prompt}]}]}
-    r = requests.post(url, json=body, timeout=60)
-    r.raise_for_status()
-    raw = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+    from openai import OpenAI
+    client = OpenAI()
+    msg = client.chat.completions.create(model="gpt-3.5-turbo", max_tokens=2000, messages=[{"role":"user","content":prompt}])
+    raw = msg.choices[0].message.content.strip()
     raw = re.sub(r"^```(?:json)?\s*", "", raw)
     raw = re.sub(r"\s*```$", "", raw)
     return raw.strip()
