@@ -118,7 +118,7 @@ def grade(s):
 def call_gemini(prompt):
     import google.generativeai as genai
     genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-pro")
     response = model.generate_content(prompt)
     raw = response.text.strip()
     raw = re.sub(r"^```(?:json)?\s*", "", raw)
